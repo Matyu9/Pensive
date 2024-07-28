@@ -1,0 +1,14 @@
+{
+  "database": [{
+    "username": "cantina",
+    "password": "LeMdPDeTest",
+    "address": "127.0.0.1",
+    "port": 3306
+  }],
+  "modules": [{
+    "name": "pensive",
+    "port": 3011,
+    "maintenance": false,
+    "debug_mode": true
+  }]
+}

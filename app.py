@@ -1,8 +1,9 @@
-from json import load
+from json import load, dumps
 from os import path, getcwd
 from flask import Flask, jsonify, request
 from cantinaUtils.Database import DataBase
 
+from Cogs.Login.login import login_cogs
 
 app = Flask(__name__)
 
@@ -32,9 +33,9 @@ def home():  # put application's code here
         return jsonify(message="Hello World!")
 
 
-@app.route('/', methods='POST')
+@app.route('/login', methods=['POST'])
 def login():
-    pass
+    return login_cogs(database, request.args.get('error'))
 
 
 if __name__ == '__main__':
