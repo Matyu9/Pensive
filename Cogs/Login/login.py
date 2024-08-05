@@ -17,7 +17,7 @@ def login_cogs(database, error):
     row = database.select("""SELECT password, token, A2F FROM cantina_administration.user WHERE username = %s""",
                           (username,), number_of_data=1)
 
-    validation_code = database.select("""SELECT content FROM cantina_administration.config WHERE name=%s""",
+    validation_code = database.select("""SELECT content FROM cantina_pensive.config WHERE name=%s""",
                                       ('secret_token',), number_of_data=1)
 
     try:
